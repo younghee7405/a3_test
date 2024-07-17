@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+ul, li,ol{list-style: none;}
+a{text-decoration: none; color: inherit;}
+body{
+    background: #fff;
+    color: #333;
+    font-family: Arial,"돋움", Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#wrap{
+    width: 1200px;
+    margin: 0 auto;    
+}
+
+#header{
+    width: 100%;
+    height: 100px;
+    /* background-color: antiquewhite; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{}
+.nav{}
+.main{}
+.main > li{
+    display: inline-block;
+    position: relative;/*sub positioning */
+}
+.main > li > a{
+    display: block;
+    width: 180px;
+    height: 50px;
+    text-align: center;    
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: tomato;
+    border-radius: 10px 10px 0 0;
+}
+
+.main > li:hover > a{
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.sub{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 10;
+}
+.sub li{}
+.sub li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: teal;
+    color: white;
+}
+.sub li a:hover{ background-color: rgba(0,0,0,0.5);}
+.sub li:last-child a{
+    border-radius: 0 0 10px 10px;
+}
+#slide_img{
+    width: 100%;
+    height: 300px;
+    /* background-color: rosybrown; */
+    position: relative;/*  .fade li positioning */
+}
+
+.fade{}
+.fade li{ position: absolute; /*  3번그림이 맨 앞에 올라와있슴 */
+    left: 0;top: 0;
+
+}
+
+.fade li a{}
+.fade li a img{}
+
+
+
+#contents{
+    width: 100%;
+    height: 200px;
+    /* background-color: rgb(243, 225, 179); */
+    display: flex;
+    justify-content: space-between;
+}
+
+#contents > div{
+    width: 390px;
+    height: 200px;
+    /* background-color: red; */
+}
+#contents h2{
+    font-size: 14px;
+    width: 100px;height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid black;
+    border-radius: 5px 5px 0 0 ;
+    background-color: black;
+    color: white;    
+}
+
+.cont1{
+    position: relative; 
+    /* 공지사항 갤러리 제목
+    공지사항 갤러리 ul */
+}
+
+.cont1 h2{
+    position: absolute;
+    left: 0;top: 0;
+    cursor: pointer;
+}
+
+.cont1 h2.b_on{
+    /* 비활성화 */
+    background-color: #ddd !important;
+    color: #333 !important;
+}
+
+.cont1  ul{
+    width: 100%;
+    height: calc(200px - 35px);
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: white;
+    border-top: 3px solid rgb(0, 0, 0);
+}
+
+.notice{}
+.notice ul{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.notice ul li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted gray;
+}
+.notice ul li a{
+    width: 70%;
+
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden ;
+}
+.notice ul li span{}
+
+.gallery{}
+.gallery h2{left: 100px;}
+.gallery ul{
+    /* display: flex; */
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.gallery ul li{}
+.gallery ul li a{}
+.gallery ul li a img{}
+
+
+
+
+
+#contents p{
+    width: 100%;
+    height: calc(200px - 35px);
+    border-top: 3px solid rgb(0, 0, 0);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+#contents p img{
+    filter: sepia();
+    transition: all 0.3s;
+}
+#contents p img:hover{
+    filter: none;
+}
+
+
+
+#footer{
+    width: 100%;
+    height: 100px;
+    /* background-color: violet; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.f_logo{
+    width: 200px;
+    /* height: 100px; */
+}
+
+.f_right{
+    width: 1000px;
+    /* height: 100px; */
+}
+
+.f_up a{ display: inline-block; padding: 0 10px;
+    border-right: 1px solid gray;
+    line-height:1}
+
+.f_up a:last-child{border-right: none;}
+
+.f_up a:hover{text-decoration: underline; }
+
+
+.f_right >div{height: 50px; line-height: 50px; text-align: center;}
+
+.pop{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border: 10px groove black;
+    border-radius: 20px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    display: none;
+}
+.pop h3{
+    text-align: center;
+    line-height: 2;
+    border-bottom: 1px solid gray;
+}
+
+.pop p{
+    line-height: 2;
+    text-align: justify;
+    padding-top: 20px;
+}
+
+.close{
+    position: absolute;
+    right: 10px;bottom: 10px;
+    cursor: pointer;
+    padding: 20px;
+}
