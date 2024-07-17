@@ -82,7 +82,9 @@ body{
 
 }
 
-.fade li a{}
+.fade li a{
+    display: block
+}
 .fade li a img{}
 
 
